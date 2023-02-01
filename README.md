@@ -8,27 +8,3 @@ The virtual assistant component of the code leverages various libraries and modu
 On the other hand, the OpenAI component of the code uses the OpenAI API to access its advanced AI models and capabilities, such as natural language processing and machine learning. This allows the virtual assistant to understand and interpret the user's requests in a more sophisticated manner, providing more accurate and relevant responses.
 
 In conclusion, the code combines the strengths of virtual assistance and OpenAI to create a powerful tool that can simplify and enhance the user experience. Whether for personal or business use, this code offers a smart and intuitive solution for interacting with AI technology.!
-### Requirements:
-
-<li>geocoder</li>
-<li>gTTS</li>
-<li>librosa</li>
-<li>openai</li>
-<li>playsound</li>
-<li>psutil</li>
-<li>PyAutoGUI</li>
-<li>pygame</li>
-<li>pyjokes</li>
-<li>pyttsx3</li>
-<li>requests</li>
-<li>SpeechRecognition</li>
-
-### Other Requirements:
-<li>Open AI API Key</li>
-<li>ffmpeg</li>
-
-<h2>Required Packages</h2>
-
-```
-pip install -r requirements.txt
-```
