@@ -1,4 +1,3 @@
-<div style="text-align: left">
 # GhanyR-VirtualAssistant
 ### Description of Python Code: Virtual Assistance with OpenAI Integration
 
@@ -33,4 +32,3 @@ In conclusion, the code combines the strengths of virtual assistance and OpenAI 
 ```
 pip install -r requirements.txt
 ```
-</div>
