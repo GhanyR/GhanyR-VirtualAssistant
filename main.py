@@ -16,7 +16,7 @@ openai.Model.list()
 
 def Listening() -> str:
     r = sr.Recognizer()
-    mic = sr.Microphone(device_index=2)
+    mic = sr.Microphone(device_index=0) # change the microphone device
     with mic as source:
         print('Listening...')
         r.pause_threshold = 1.5
@@ -53,16 +53,16 @@ pygame.mixer.init(44100, -16,2,2048)
 pygame.mixer.init() 
 pygame.init()
 
-listPertanyaan = []
-listJawaban = []
+questionsList = []
+answerList = []
 x = 0
 while True:
     # question = "bagaimana kabarmu"
     playsound(f"active.mp3")
     question = Listening().lower()
     prompt = f"Berikut percakapan dengan asisten AI. Asistennya sangat membantu, kreatif, pintar, dan sangat ramah.\n\nManusia: Halo, siapa kamu?\nAI: Saya adalah AI yang dibuat oleh OpenAI. apa yang bisa saya bantu hari ini?\Manusia:"
-    for y in range(len(listPertanyaan)):
-        prompt = prompt + f" " + listPertanyaan[y] + "\nAI: " + listJawaban[y] + "\nManusia:"
+    for y in range(len(questionsList)):
+        prompt = prompt + f" " + questionsList[y] + "\nAI: " + answerList[y] + "\nManusia:"
     prompt = prompt + f" {question}\nAI:"
 
     response = openai.Completion.create(
@@ -76,8 +76,8 @@ while True:
     stop=["\n"]
     )
     
-    listPertanyaan.append(question)
-    listJawaban.append(response["choices"][0]["text"])
+    questionsList.append(question)
+    answerList.append(response["choices"][0]["text"])
 
     # speak(response["choices"][0]["text"])
     gTTS(text=response["choices"][0]["text"], lang='id', slow=False).save(f"response{x}.mp3")
@@ -86,7 +86,7 @@ while True:
     # sound = Sound(f"response{x}.wav")
     # sound.play()2A 
 
-    # Mempercepat audio menjadi 2 kali lipat
+    # Mempercepat audio menjadi 1.5 kali lipat
     subprocess.run(["ffmpeg", "-i", f"response{x}.mp3", "-filter:a", "atempo=1.5", "-vn", f"faster{x}.mp3"])
 
     duration = librosa.get_duration(filename=f"faster{x}.mp3")    
