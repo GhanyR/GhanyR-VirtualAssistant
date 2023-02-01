@@ -44,7 +44,7 @@ for x in range(100):
     else:
         continue
 
-os.environ["PATH"] += os.pathsep + "C:/Python310/ffmpeg/bin"
+os.environ["PATH"] += os.pathsep + "YOUR ffmpeg PATH HERE"
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
