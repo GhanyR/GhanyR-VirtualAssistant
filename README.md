@@ -24,7 +24,7 @@ In conclusion, the code combines the strengths of virtual assistance and OpenAI 
 <li>SpeechRecognition</li>
 
 ### Other Requirements:
-<li>open ai key api</li>
+<li>Open AI API Key</li>
 <li>ffmpeg</li>
 
 <h2>Required Packages</h2>
