@@ -1,28 +1,34 @@
-# GPT is all you need for the backend
-![Galaxy brain meme (a) Writing a backend (b) hiring a backend engineer (c) Asking ChatGPT for a backend (d) The LLM is the backend](LLM-IS-BACKEND.jpeg)
+# GhanyR-VirtualAssistant
+### Description of Python Code: Virtual Assistance with OpenAI Integration
 
-People have been saying Github Copilot will replace programmers. We think that's wrong. We have all powerful models and we want to restrict them to writing code? All code has bugs!
+![This code integrates virtual assistance with OpenAI, making use of the latter's cutting-edge AI capabilities to create a more intelligent and helpful virtual assistant. The code is written in Python, a powerful programming language known for its simplicity and versatility.
 
-Code is not the ideal way to encode business logic. Code must be reviewed, and it does what you tell it, not what you want. The proper format for business logic is human intelligence.
+The virtual assistant component of the code leverages various libraries and modules, such as the SpeechRecognition library for speech recognition and the pyttsx3 library for text-to-speech conversion. These libraries work together to allow the virtual assistant to understand spoken commands and respond through speech, making it more user-friendly and accessible.
 
-So we thought, who needs python and ec2s and biz logic and postgres?
+On the other hand, the OpenAI component of the code uses the OpenAI API to access its advanced AI models and capabilities, such as natural language processing and machine learning. This allows the virtual assistant to understand and interpret the user's requests in a more sophisticated manner, providing more accurate and relevant responses.
 
-We've built a entire Backend+Database powered by an LLM. It infers business logic based on the name of the API call and can persist a kilobyte of state!
+In conclusion, the code combines the strengths of virtual assistance and OpenAI to create a powerful tool that can simplify and enhance the user experience. Whether for personal or business use, this code offers a smart and intuitive solution for interacting with AI technology.!
+### Requirements:
 
-Here's the experience of the future:
-1. Instruct the LLM on the purpose of the backend (i.e. "This is a todo list app")
-2. Write the initial json blob for the database state (i.e. {todo_items: [{title: "eat breakfast", completed: true}, {title: "go to school", completed: false}]}
-3. Start making API calls! You now have infinite backend endpoints that will infer their own business logic and update the persistent state!
+<li>geocoder</li>
+<li>gTTS</li>
+<li>librosa</li>
+<li>openai</li>
+<li>playsound</li>
+<li>psutil</li>
+<li>PyAutoGUI</li>
+<li>pygame</li>
+<li>pyjokes</li>
+<li>pyttsx3</li>
+<li>requests</li>
+<li>SpeechRecognition</li>
 
-## Why
-This is the future we imagine
-1. You can iterate on your frontend without knowing exactly what the backend needs to look like.
-2. Backend gives you the wrong format? `https://backend-gpt.com/chess/get_board_state()` -> `https://backend-gpt.com/chess/get_board_state_as_fen()`
-3. Mistype an API name? It doesn't matter!
-4. Serverless w/o the cold start: The only difference between your server and someone elses is the 1KB of state and the LLM instructions, these can be swapped out in milliseconds
+### Other Requirements:
+<li>Open AI API Key</li>
+<li>ffmpeg</li>
 
+<h2>Required Packages</h2>
 
-## Still don't get it?
-Here's how it works in Parker's words
-
-We basically used GPT to handle all the backend logic for a todo-list app. We represented the state of the app as a json with some prepopulated entries which helped define the schema. Then we pass the prompt, the current state, and some user-inputted instruction/API call in and extract a response to the client + the new state. So the idea is that instead of writing backend routes, the LLM can handle all the basic CRUD logic for a simple app so instead of writing specific routes, you can input commands like add_five_housework_todos() or delete_last_two_todos() or sort_todos_alphabetically() . It tends to work better when the commands are expressed as functions/pseudo function calls but natural language instructions like delete last todos also work.
+```
+pip install -r requirements.txt
+```
