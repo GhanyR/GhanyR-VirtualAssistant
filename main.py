@@ -3,7 +3,6 @@ import openai
 import pyttsx3
 import speech_recognition as sr
 import os
-from OCR import OCR
 import os
 from gtts import gTTS
 from playsound import playsound
