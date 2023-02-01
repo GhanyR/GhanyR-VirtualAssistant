@@ -1,3 +1,4 @@
+sed 's/^[ \t]*
 # GhanyR-VirtualAssistant
 ### Description of Python Code: Virtual Assistance with OpenAI Integration
 
