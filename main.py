@@ -1,35 +1,43 @@
 import os
 import openai
 import pyttsx3
-import wikipedia
 import speech_recognition as sr
-import webbrowser
-import datetime
 import os
-import sys
-import smtplib
-from news import speak_news, getNewsUrl
 from OCR import OCR
-from diction import translate
-from helpers import *
-from youtube import youtube
-from sys import platform
 import os
-import getpass
 from gtts import gTTS
 from playsound import playsound
 from pygame.mixer import Sound
 import pygame
-from pydub import AudioSegment
-from pydub.playback import play
-import pyrubberband as pyrb
-import soundfile as sf
 import time
+import subprocess
+import librosa
 
 openai.organization = "org-bMnHOkBSJP5f6k5JD1oqQulu"
-openai.api_key = "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"
+openai.api_key = 'YOUR OPENAI API KEY HERE'
 openai.Model.list()
 
+def Listening() -> str:
+    r = sr.Recognizer()
+    mic = sr.Microphone(device_index=2)
+    with mic as source:
+        print('Listening...')
+        r.pause_threshold = 1.5
+        r.energy_threshold = 494
+        r.adjust_for_ambient_noise(source, duration=1.5)
+        audio = r.listen(source)
+
+    try:
+        print('Recognizing..')
+        query = r.recognize_google(audio, language='id')
+        print(f'User said: {query}\n')
+
+    except Exception as e:
+        # print(e)
+
+        print('Say that again please...')
+        return 'None'
+    return query
 
 for x in range(100):
     import os
@@ -54,7 +62,7 @@ x = 0
 while True:
     # question = "bagaimana kabarmu"
     playsound(f"active.mp3")
-    question = takeCommand().lower()
+    question = Listening().lower()
     prompt = f"Berikut percakapan dengan asisten AI. Asistennya sangat membantu, kreatif, pintar, dan sangat ramah.\n\nManusia: Halo, siapa kamu?\nAI: Saya adalah AI yang dibuat oleh OpenAI. apa yang bisa saya bantu hari ini?\Manusia:"
     for y in range(len(listPertanyaan)):
         prompt = prompt + f" " + listPertanyaan[y] + "\nAI: " + listJawaban[y] + "\nManusia:"
@@ -79,10 +87,7 @@ while True:
 
 
     # sound = Sound(f"response{x}.wav")
-    # sound.play()
-
-    import subprocess
-    import librosa
+    # sound.play()2A 
 
     # Mempercepat audio menjadi 2 kali lipat
     subprocess.run(["ffmpeg", "-i", f"response{x}.mp3", "-filter:a", "atempo=1.5", "-vn", f"faster{x}.mp3"])
