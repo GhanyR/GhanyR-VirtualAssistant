@@ -1,6 +1,3 @@
-# GhanyR-VirtualAssistant
-### Description of Python Code: Virtual Assistance with OpenAI Integration
-
 ![This code integrates virtual assistance with OpenAI, making use of the latter's cutting-edge AI capabilities to create a more intelligent and helpful virtual assistant. The code is written in Python, a powerful programming language known for its simplicity and versatility.
 
 The virtual assistant component of the code leverages various libraries and modules, such as the SpeechRecognition library for speech recognition and the pyttsx3 library for text-to-speech conversion. These libraries work together to allow the virtual assistant to understand spoken commands and respond through speech, making it more user-friendly and accessible.
