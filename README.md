@@ -1,6 +1,6 @@
 <img src="spectrum.gif" alt="drawing" width="800"/>
 
-# GhanyR-VirtualAssistant
+# VirtualAssistant
 ### Description of Python Code: Virtual Assistance with OpenAI Integration
 
 This code integrates virtual assistance with OpenAI, making use of the latter's cutting-edge AI capabilities to create a more intelligent and helpful virtual assistant. The code is written in Python, a powerful programming language known for its simplicity and versatility.
