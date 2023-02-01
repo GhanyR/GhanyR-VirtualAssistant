@@ -1,4 +1,4 @@
-<img src="spectrum.gif" alt="drawing" width="1000"/>
+<img src="spectrum.gif" alt="drawing" width="800"/>
 
 # GhanyR-VirtualAssistant
 ### Description of Python Code: Virtual Assistance with OpenAI Integration
