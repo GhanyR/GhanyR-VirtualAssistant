@@ -2,8 +2,6 @@ import os
 import openai
 import pyttsx3
 import speech_recognition as sr
-import os
-import os
 from gtts import gTTS
 from playsound import playsound
 from pygame.mixer import Sound
